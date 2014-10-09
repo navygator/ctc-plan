@@ -33,7 +33,7 @@ gem 'spring',        group: :development
 group :development do
   gem "letter_opener"
   gem 'webrick'
-  # gem 'debu gger'
+  # gem 'debugger'
   gem 'xray-rails'
   gem 'bullet'
   gem 'quiet_assets'
