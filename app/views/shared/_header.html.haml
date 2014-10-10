@@ -35,17 +35,25 @@
         .form-group
           %input{ type: "text", class: "form-control", placeholder: "Search" }
         %button{ type: "submit", class: "btn btn-default" } Submit
-/       <ul class="nav navbar-nav navbar-right">
-/         <li><a href="#">Link</a></li>
-/         <li class="dropdown">
-/           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-/           <ul class="dropdown-menu" role="menu">
-/             <li><a href="#">Action</a></li>
-/             <li><a href="#">Another action</a></li>
-/             <li><a href="#">Something else here</a></li>
-/             <li class="divider"></li>
-/             <li><a href="#">Separated link</a></li>
-/           </ul>
-/         </li>
-/       </ul>
-/ </nav>
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{ href: "#" } Link 1
+        %li
+          %a{ href: "#" } Link 2
+        %li.dropdown
+          %a.dropdown-toggle{ href: "#", data: {toggle: "dropdown" } } 
+            Dropdown 
+            %span.caret
+          %ul.dropdown-menu{ role: "menu" }
+            %li
+              %a{ href: "#" } Action 1
+            %li
+              %a{ href: "#" } Action 2
+            %li
+              %a{ href: "#" } Action 3
+            %li.divider
+            %li
+              %a{ href: "#" } Action 4
+            %li.divider
+            %li
+              %a{ href: "#" } Action 5
