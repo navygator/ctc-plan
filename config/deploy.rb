@@ -42,6 +42,7 @@ set(:config_files, %w(
   nginx.conf
   database.example.yml
   log_rotation
+  monit
   unicorn.rb
   unicorn_init.sh
 ))
@@ -58,19 +59,19 @@ set(:executable_config_files, %w(
 set(:symlinks, [
   {
     source: "nginx.conf",
-    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
+    link: "/etc/nginx/sites-enabled/#{fetch(:application)}"
   },
   {
     source: "unicorn_init.sh",
-    link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
+    link: "/etc/init.d/unicorn_#{fetch(:application)}"
   },
   {
     source: "log_rotation",
-   link: "/etc/logrotate.d/#{fetch(:full_app_name)}"
+   link: "/etc/logrotate.d/#{fetch(:application)}"
   },
   {
     source: "monit",
-    link: "/etc/monit/conf.d/#{fetch(:full_app_name)}.conf"
+    link: "/etc/monit/conf.d/#{fetch(:application)}.conf"
   }
 ])
 
@@ -85,11 +86,11 @@ namespace :deploy do
   
   # remove the default nginx configuration as it will tend
   # to conflict with our configs.
-  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+  # before 'deploy:setup_config', 'nginx:remove_default_vhost'
 
   # reload nginx to it will pick up any modified vhosts from
   # setup_config
-  after 'deploy:setup_config', 'nginx:reload'
+  # after 'deploy:setup_config', 'nginx:reload'
 
   # Restart monit so it will pick up any monit configurations
   # we've added
