@@ -78,8 +78,8 @@ set(:symlinks, [
 
 
 namespace :deploy do
-
-  before :deploy, "deploy:check_revision"
+  
+  # before :deploy, "deploy:check_revision"
   # compile assets locally then rsync
   # after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
