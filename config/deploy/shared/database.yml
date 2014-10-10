@@ -1,7 +1,0 @@
-production:
-  adapter: mysql2
-  database: ctc_prod
-  user: root
-  password: ghjcgthj
-  pool: 5
-  timeout: 5000  
