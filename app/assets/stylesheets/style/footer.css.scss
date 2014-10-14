@@ -1,0 +1,24 @@
+footer {
+    height: 68px; 
+    font-size: .8em;
+    overflow: hidden;
+    clear: both;
+    color: #666;
+    a {
+        color: #666;
+    }
+
+    img {
+        vertical-align: middle; margin-left: 20px;
+    }
+    .copyright, .help, .support {
+        float: right;
+        line-height: 25px;
+        margin-left: 40px;
+    }
+    .server, .user {
+        float: none; 
+        margin-right: 40px; 
+        margin-left: 0;
+    }
+}

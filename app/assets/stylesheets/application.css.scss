@@ -18,3 +18,315 @@
 @import "bootstrap-sprockets";
 @import "bootstrap"; 
 
+@import "style/variables";
+@import "style/blue";
+@import "style/navigation";
+@import "style/main";
+@import "style/shortcodes";
+@import "style/sidebar";
+@import "style/footer";
+
+/* ------------------------------------------ */
+/*             TABLE OF CONTENTS
+/* ------------------------------------------ */
+/*   01 - General & Basic Styles   */
+/*   02 - Header & Navigation      */
+/*   03 - Main Page Elements       */
+/*   04 - Revolution Slider        */
+/*   05 - Shortcodes Elements      */
+/*   06 - Portfolio Styles         */
+/*   07 - Single Project Styles    */
+/*   08 - Blog Styles              */
+/*   09 - Single post Styles       */
+/*   10 - Sidebar Styles           */
+/*   11 - Footer Styles        */
+/*   12 - Plugins Styles         */
+
+
+
+html {background-color: #fff; height: 100%;}
+
+/*body 
+{
+    background-color: #fff; 
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif; 
+    margin: 0 15px; 
+    padding: 0;
+    height: 100%;
+}*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 300;
+    color: #888;
+}
+strong, b {
+    font-weight: 600;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+ul, ol {
+    list-style: none;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+a {
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+a:hover {
+    color: #444;
+}
+a, a:hover {
+    text-decoration: none;
+}
+i {
+    font-size: 1.1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    color: #444;
+}
+h1 {
+    font-size: 24px;
+    line-height: 30px;
+}
+h2 {
+    font-size: 22px;
+    line-height: 28px;
+}
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+}
+h4 {
+    font-size: 16px;
+    line-height: 22px;
+}
+h5 {
+    font-size: 14px;
+    line-height: 20px;
+}
+h6 {
+    font-size: 12px;
+    line-height: 18px;
+}
+p {
+    color: #888;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 22px;
+    margin: 0;
+    strong {
+        font-weight: 600;
+    }
+}
+.accent-color-bg {
+    color: #fff;
+}
+.fittext {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 46px;
+    color: rgba(0,0,0, 0.8);
+    strong {
+        font-weight: 700;
+    }
+}
+.page-content {
+    p {
+        margin-bottom: 15px;
+    }
+}
+.wite-text {
+    color: #fff;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.image-text {
+    margin-right: 10px;
+}
+a.main-button, input[type="submit"] {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+a.main-button:hover, input[type="submit"]:hover {
+    background: #444;
+    color: #fff;
+}
+a.main-button {
+    i {
+        font-size: 1.2em;
+    }
+}
+input[type="submit"] {
+    border: none;
+}
+.tooltip {
+    .tooltip-inner {
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -o-border-radius: 2px;
+        border-radius: 2px;
+    }
+}
+#content {
+    padding: 50px 0;
+}
+#content.full-sections {
+    padding: 0;
+}
+.section {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+}
+.section.repeat-bg {
+    background-repeat: repeat;
+    -webkit-background-size: auto !important;
+    -moz-background-size: auto !important;
+    -o-background-size: auto !important;
+    background-size: auto !important;
+}
+.bg-parallax {
+    background-attachment: fixed;
+}
+.section-video {
+    position: absolute;
+    z-index: 33;
+    left: 0;
+    top: -100px;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+    }
+    img {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+.section-video-content {
+    z-index: 35;
+    position: relative;
+    opacity: 0.98;
+}
+.section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 34;
+    opacity: 0.7;
+}
+.light-section {
+    color: #fff;
+    .testimonials {
+        color: #aaa;
+        .testimonial-content {
+            p {
+                color: #c4c4c4;
+            }
+        }
+    }
+}
+#container {
+    background-color: #fff;
+}
+.boxed-page {
+    position: relative;
+    width: 1220px;
+    margin: 0 auto;
+    background-color: #fff;
+    -webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    header {
+        width: 1220px;
+    }
+}
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999999999;
+}
+.spinner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    -webkit-animation: rotatee 2.0s infinite linear;
+    -o-animation: rotatee 2.0s infinite linear;
+    -moz-animation: rotatee 2.0s infinite linear;
+    animation: rotatee 2.0s infinite linear;
+}
+.dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #0a9fd8;
+    border-radius: 100%;
+    -webkit-animation: bouncee 2.0s infinite ease-in-out;
+    -moz-animation: bouncee 2.0s infinite ease-in-out;
+    -o-animation: bouncee 2.0s infinite ease-in-out;
+    animation: bouncee 2.0s infinite ease-in-out;
+}
+.dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    -moz-animation-delay: -1.0s;
+    -o-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+    
+
+p.actions {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
