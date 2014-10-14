@@ -12,6 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'layout'
+ *= require 'typo'
  */
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap"; 
+

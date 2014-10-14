@@ -7,8 +7,8 @@
     = csrf_meta_tags
 
   %body
-    .page-wrapper
-
-      %section#sec-header
-        = render :partial => 'shared/header'
-      = yield
+    #page-wrapper
+      = render :partial => 'shared/header'
+      = render :partial => 'shared/sub_header'
+      %section#content
+        = yield

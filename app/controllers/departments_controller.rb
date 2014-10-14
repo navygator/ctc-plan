@@ -1,0 +1,3 @@
+class DepartmentsController < BaseController
+
+end
