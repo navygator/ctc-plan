@@ -1,22 +1,33 @@
-%header#header.navbar-fixed-top
-  %nav.navbar-default{ role: "navigation" }
+.navbar.navbar-default.navbar-top{ role: "navigation" }
+  .container
     .navbar-header
       %button.navbar-toggle.collapsed{ type: "button", data: { target: ".navbar-collapse", toggle: "collapse" } }
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to "ДЮЦ", root_path
-    #mainHeader.collapse.navbar-collapse
-      %ul.nav.navbar-nav.pull-right
-        %li
-          %a{href: "#"} Pages
-        %li
-          %a{href: "#"} Test1
-          %ul
+      = link_to "ДЮЦ", root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse
+      .search-side
+        %a.show-search{  href: "#" }
+          %i.icon-fa-search
+        .search-form
+          %form{ action: "#", class: "searchform", method: "get", role: "search", autocomplete: "off" }
+            %input{ type: "text", placeholder: "Search the site...", id: "s", name: "s", value: "" }
+      %ul.nav.navbar-nav.navbar-right
+        %li.drop
+          = link_to "Справочники", '#'
+          %ul.dropdown
+            %li= link_to 'Отделы', departments_path
+            %li= link_to 'Объединения', unions_path
+        %li.drop
+          %a{href: "#"} Отчеты
+          %ul.dropdown
             %li
-              %a{href: "#"} link1
-              %a{href: "#"} link2
-              %a{href: "#"} link3
+              %a{href: "#"} По отделам
+            %li
+              %a{href: "#"} По кружкам
+            %li
+              %a{href: "#"} По объединениям
 
 

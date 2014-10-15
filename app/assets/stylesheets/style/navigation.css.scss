@@ -413,18 +413,101 @@ ul.social-list {
     }
 }
 .search-side {
-    position: relative;
-    float: right;
-    top: 19px;
-    right: -15px;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    > a {
-        margin-left: 3px;
+  position: relative;
+  float: right;
+  top: 19px;
+  right: -15px;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  > a {
+    &:focus, &:hover {
+      text-decoration: none;
+      outline: none;
     }
+    margin-left: 3px;
+  }
 }
+.show-search {
+  position: relative;
+  display: block;
+  float: right;
+  i {
+    font-size: 1.2em !important;
+    display: block;
+    color: #aaa;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #f2f2f2;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+  }
+}
+
+.show-search:hover i {
+    color: #888;
+}
+
+.navbar .search-form {
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    float: right;
+    display: none;
+    top: 40px;
+}
+
+.navbar .search-form:before {
+    background-color: #ccc;
+    top: -2px;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 4px;
+    z-index: 20;
+    right: 15px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.navbar .search-form form input {
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 5px 14px;
+    z-index: 22;
+    color: #9d9d9d;
+    box-shadow: none;
+    -o-box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar .search-form form {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 20;
+}
+
+
 .box-dropdown {
     position: relative;
     display: block;
