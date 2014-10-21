@@ -3,4 +3,7 @@ namespace :deploy do
   task :setup_config do
     run "echo 'SETUP'"
   end
+  task :setup do
+    run "echo 'SETUP'"
+  end
 end

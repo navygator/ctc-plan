@@ -11,7 +11,7 @@ namespace :mysql do
       run "#{sudo} apt-get -y install mysql-server mysql-client libmysqlclient15-dev"
     end
   end
-  after "deploy:install", "mysql:install"
+  # after "deploy:install", "mysql:install"
 
   desc "Create a database for this application."
   task :create_database do
