@@ -17,5 +17,7 @@
           %td= dep.started_at
           %td= dep.closed_at
           %td.actions
-            = link_to 'Edit', edit_department_path(dep), class: "btn btn-primary"
-            = link_to 'Delete', departments_path(dep), method: :destroy, class: "btn btn-danger"
+            = link_to edit_department_path(dep), class: "btn btn-primary" do
+              %i.icon-fa-edit
+            = link_to departments_path(dep), method: :destroy, class: "btn btn-danger" do
+              %i.icon-fa-trash-o
