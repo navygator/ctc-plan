@@ -1,0 +1,10 @@
+table {
+  th,td {
+    &.actions {
+      width: 100px;
+      a.btn {
+        border-radius: 34px;
+      }
+    }
+  }
+}

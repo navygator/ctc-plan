@@ -1,2 +1,21 @@
-%h1 Departments#index
-%p Find me in app/views/departments/index.html.erb
+- content_for :page_title do
+  Отделы 
+
+%p= link_to 'Создать', new_department_path, class: 'btn btn-primary'
+- if @departments.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th Создан
+        %th Закрыт
+        %th.actions
+    %tbody
+      - @departments.each do |dep|
+        %tr
+          %td= dep.name
+          %td= dep.started_at
+          %td= dep.closed_at
+          %td.actions
+            = link_to 'Edit', edit_department_path(dep), class: "btn btn-primary"
+            = link_to 'Delete', departments_path(dep), method: :destroy, class: "btn btn-danger"

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'departments/index'
+
+  get 'departments/show'
+
   resources :departments
 
   resources :unions
