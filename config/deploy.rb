@@ -104,6 +104,7 @@ namespace :deploy do
   task :setup_config do
     run 'echo "1..1...1"'
   end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do

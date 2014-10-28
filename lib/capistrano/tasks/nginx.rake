@@ -3,8 +3,8 @@ namespace :nginx do
   task :install do
     on roles(:web) do
       #run "#{sudo} add-apt-repository ppa:nginx/stable"
-      run "#{sudo} apt-get -y update"
-      run "#{sudo} apt-get -y install nginx"
+      sudo "apt-get -y update"
+      sudo "apt-get -y install nginx"
     end
   end
   # after "deploy:install", "nginx:install"
