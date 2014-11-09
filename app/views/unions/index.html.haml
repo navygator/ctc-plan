@@ -7,17 +7,19 @@
     %thead
       %tr
         %th Название
-        %th Создан
-        %th Закрыт
+        %th Отдел
+        %th Создано
+        %th Закрыто
         %th.actions
     %tbody
-      - @unions.each do |dep|
+      - @unions.each do |union|
         %tr
-          %td= dep.name
-          %td= dep.started_at
-          %td= dep.closed_at
+          %td= union.name
+          %td= union.department.name
+          %td= union.started_at
+          %td= union.closed_at
           %td.actions
-            = link_to edit_union_path(dep), class: "btn btn-default btn-round" do
+            = link_to edit_union_path(union), class: "btn btn-default btn-round" do
               %i.icon-fa-edit
-            = link_to unions_path(dep), method: :destroy, class: "btn btn-danger btn-round" do
+            = link_to unions_path(union), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
               %i.icon-fa-trash-o

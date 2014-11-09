@@ -1,4 +1,8 @@
 ru:
+  activerecord:
+    attributes:
+      department:
+        name: Название
   department: Отдел
   departments: Отделы
   edit: Редактировать
