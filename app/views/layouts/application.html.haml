@@ -10,9 +10,14 @@
     #container
       .hidden-header{ style: "height: 86px;" }
       %header.clearfix
-        = render :partial => 'shared/header'
+        = render partial: 'shared/header'
       .page-banner.no-subtitle  
-        = render :partial => 'shared/sub_header'
+        = render partial: 'shared/sub_header'
+      .sys-notifications
+        = render partial: 'shared/flash'
       %section#content
         .container
           = yield
+    - if Rails.env.development?
+      = debug params
+      = debug session.inspect

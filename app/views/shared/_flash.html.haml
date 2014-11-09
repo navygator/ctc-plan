@@ -1,0 +1,5 @@
+- if flash.present?
+  - flash.each do |type, message|
+    .alert{class: "alert-#{type}"}
+      .container
+        = message

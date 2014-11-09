@@ -6,6 +6,10 @@ ru:
   department: Отдел
   departments: Отделы
   edit: Редактировать
+  flash:
+    success:
+      create: "Успешно создан %{resource}"
+      update: "%{resource} успешно обновлен"
   new: Новый
   union: Объединение
   unions: Объединения

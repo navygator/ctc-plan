@@ -15,6 +15,7 @@ class BaseController < ApplicationController
 
   def create
     if model.create(send("#{model_name.underscore}_params"))
+      flash[:success] = t('flash.success.create', resource: t(model_name.underscore))
       redirect_to action: :index
     else
       render 'new'
@@ -32,6 +33,7 @@ class BaseController < ApplicationController
 
   def update
     if @resource.update_attributes(send("#{model_name.underscore}_params"))
+      flash[:success] = t('flash.success.update', resource: t(model_name.underscore))
       redirect_to action: :index
     else
       render 'edit'
