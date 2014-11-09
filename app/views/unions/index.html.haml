@@ -1,8 +1,8 @@
 - content_for :page_title do
-  Отделы 
+  Объединения 
 
-%p= link_to 'Создать', new_department_path, class: 'btn btn-primary'
-- if @departments.present?
+%p= link_to 'Создать', new_union_path, class: 'btn btn-primary'
+- if @unions.present?
   %table.table.table-striped
     %thead
       %tr
@@ -11,13 +11,13 @@
         %th Закрыт
         %th.actions
     %tbody
-      - @departments.each do |dep|
+      - @unions.each do |dep|
         %tr
           %td= dep.name
           %td= dep.started_at
           %td= dep.closed_at
           %td.actions
-            = link_to edit_department_path(dep), class: "btn btn-default btn-round" do
+            = link_to edit_union_path(dep), class: "btn btn-default btn-round" do
               %i.icon-fa-edit
-            = link_to departments_path(dep), method: :destroy, class: "btn btn-danger btn-round" do
+            = link_to unions_path(dep), method: :destroy, class: "btn btn-danger btn-round" do
               %i.icon-fa-trash-o

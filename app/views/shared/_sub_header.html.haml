@@ -4,5 +4,4 @@
       %h2= yield :page_title 
     .col-md-6
       %ul.breadcrumbs
-        %li= link_to 'Home', '#'
-        %li Dropcaps
+        = render_breadcrumbs tag: :li, separator: ""

@@ -2,11 +2,15 @@ class BaseController < ApplicationController
   before_filter :find_model, only: [:new, :create, :edit, :update, :show]
   before_filter :find_collection, only: :index
 
+  add_breadcrumb "Домой", :root_path
+
   def index
+    add_breadcrumb t(controller_name), send("#{controller_name}_path"), :title => t(controller_name)
   end
 
   def new
-
+    add_breadcrumb t(controller_name), send("#{controller_name}_path"), :title => t(controller_name)
+    add_breadcrumb t(:new), send("new_#{controller_name.singularize}_path"), :title => t(:new)
   end
 
   def create
@@ -22,7 +26,8 @@ class BaseController < ApplicationController
   end
 
   def edit
-    
+    add_breadcrumb t(controller_name), send("#{controller_name}_path"), :title => t(controller_name)
+    add_breadcrumb t(:edit), send("edit_#{controller_name.singularize}_path"), :title => t(:edit)
   end
 
   def update

@@ -1,4 +1,8 @@
-.form-horizontal
-  .form-group
-    = f.label :name, "Название", class: "control-label col-md-2" 
-    = f.text_field :name
+.form-group
+  = f.label :name, "Название", class: "control-label col-md-2" 
+  = f.text_field :name
+.form-group
+  = f.label :started_at, "Открыт:", class: "control-label col-md-2" 
+  = f.text_field :started_at, class: "col-md-2 date-field", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
+  = f.label :closed_at, "Закрыт:", class: "control-label col-md-2" 
+  = f.text_field :closed_at, class: "col-md-2", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
