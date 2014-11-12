@@ -187,6 +187,9 @@ ul.social-list {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -o-border-radius: 0;
+    .navbar-header {
+      padding-top: 10px;
+    }
     .search-form {
         position: absolute;
         right: 0;
@@ -236,12 +239,16 @@ ul.social-list {
 }
 .navbar-brand {
     position: relative;
-    padding: 15px 0;
+    padding: 0;
     margin: 0!important;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    img {
+      height: 100%;
+      width: auto;
+    }
 }
 .navbar-default {
     .search-side {

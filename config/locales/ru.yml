@@ -8,8 +8,9 @@ ru:
   edit: Редактировать
   flash:
     success:
-      create: "Успешно создан %{resource}"
+      create: "%{resource} успешно создан"
       update: "%{resource} успешно обновлен"
+      delete: "%{resource} успешно удален"
   new: Новый
   union: Объединение
   unions: Объединения

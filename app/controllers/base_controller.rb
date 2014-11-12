@@ -1,6 +1,6 @@
 class BaseController < ApplicationController
-  before_filter :find_model, only: [:new, :create, :edit, :update, :show]
-  before_filter :find_collection, only: :index
+  before_filter :find_model, except: [:index]
+  before_filter :find_collection, only: [:index]
 
   add_breadcrumb "Домой", :root_path
 
@@ -41,7 +41,9 @@ class BaseController < ApplicationController
   end
 
   def destroy
-    
+    @resource.destroy
+    flash[:success] = t('flash.success.delete', resource: t(model_name.underscore))
+    redirect_to action: :index
   end
   
 
