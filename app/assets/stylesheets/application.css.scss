@@ -26,6 +26,9 @@
 @import "style/footer";
 @import "style/flash";
 
+a:active, a:focus {
+    outline-style: none;
+}
 /* ------------------------------------------ */
 /*             TABLE OF CONTENTS
 /* ------------------------------------------ */

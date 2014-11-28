@@ -21,5 +21,5 @@
           %td.actions
             = link_to edit_union_path(union), class: "btn btn-default btn-round" do
               %i.icon-fa-edit
-            = link_to unions_path(union), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
+            = link_to union_path(union), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
               %i.icon-fa-trash-o
