@@ -1,11 +1,15 @@
 .form-group
   = f.label :department_id, "Отдел", class: "control-label col-md-2" 
-  = f.collection_select :department_id, Department.all, :id, :name
+  .col-md-4 
+    = f.collection_select :department_id, Department.all, :id, :name, {}, class: "form-control"
 .form-group
   = f.label :name, "Название", class: "control-label col-md-2" 
-  = f.text_field :name
+  .col-md-4 
+    = f.text_field :name, class: "form-control"
 .form-group
   = f.label :started_at, "Открыто:", class: "control-label col-md-2" 
-  = f.text_field :started_at, class: "col-md-2 date-field", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
+  .col-md-4 
+    = f.text_field :started_at, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
   = f.label :closed_at, "Закрыто:", class: "control-label col-md-2" 
-  = f.text_field :closed_at, class: "col-md-2 date-field", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
+  .col-md-4 
+    = f.text_field :closed_at, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
