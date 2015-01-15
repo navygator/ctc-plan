@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Новый предмет
+
+.form-horizontal
+  = form_for @subject do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', subjects_path, class: 'btn btn-primary'

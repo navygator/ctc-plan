@@ -1,0 +1,23 @@
+- content_for :page_title do
+  Предметы 
+
+%p= link_to 'Создать', new_subject_path, class: 'btn btn-primary'
+- if @subjects.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th Объединение
+        %th Отдел
+        %th.actions
+    %tbody
+      - @subjects.each do |subject|
+        %tr
+          %td= subject.name
+          %td= subject.union.name
+          %td= subject.union.department.name
+          %td.actions
+            = link_to edit_subject_path(subject), class: "btn btn-default btn-round" do
+              %i.icon-fa-edit
+            = link_to subject_path(subject), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
+              %i.icon-fa-trash-o

@@ -105,11 +105,12 @@ namespace :deploy do
     run 'echo "1..1...1"'
   end
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+  %w[start stop restart].each do |command|
+    desc "#{command} Unicorn server."
+    task command do
+      on roles(:app) do
+        execute "service unicorn_#{fetch(:application)} #{command}"
+      end
     end
   end
 
@@ -123,5 +124,4 @@ namespace :deploy do
       # end
     end
   end
-
 end

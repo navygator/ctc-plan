@@ -18,8 +18,10 @@
         %li.drop
           = link_to "Справочники", '#'
           %ul.dropdown
+            %li= link_to 'Кружки', sections_path
             %li= link_to 'Отделы', departments_path
             %li= link_to 'Объединения', unions_path
+            %li= link_to 'Предметы', subjects_path
         %li.drop
           %a{href: "#"} Отчеты
           %ul.dropdown

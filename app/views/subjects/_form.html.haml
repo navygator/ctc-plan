@@ -1,0 +1,8 @@
+.form-group
+  = f.label :union_id, "Предмет", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :union_id, Union.active, :id, :name, {}, class: "form-control"
+.form-group
+  = f.label :name, "Название", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :name, class: "form-control"
