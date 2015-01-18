@@ -1,0 +1,19 @@
+- content_for :page_title do
+  Года обучения 
+
+%p= link_to 'Создать', new_studying_year_path, class: 'btn btn-primary'
+- if @studying_years.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th.actions
+    %tbody
+      - @studying_years.each do |syear|
+        %tr
+          %td= syear.name
+          %td.actions
+            = link_to edit_studying_year_path(syear), class: "btn btn-default btn-round" do
+              %i.icon-fa-edit
+            = link_to studying_year_path(syear), class: "btn btn-danger btn-round", method: :delete, data: { confirm: "Are you shure?" } do
+              %i.icon-fa-trash-o

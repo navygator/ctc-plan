@@ -12,6 +12,8 @@
  *= require font-awesome
  *= require bootstrap-datepicker3
  *= require_tree .
+ *= require select2
+ *= require select2-bootstrap
  *= require_self
  */
 @import "bootstrap-sprockets";
@@ -27,8 +29,9 @@
 @import "style/flash";
 
 a:active, a:focus {
-    outline-style: none;
+  outline-style: none;
 }
+
 /* ------------------------------------------ */
 /*             TABLE OF CONTENTS
 /* ------------------------------------------ */

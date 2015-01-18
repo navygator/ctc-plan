@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Новый год обучения
+
+.form-horizontal
+  = form_for @studying_year do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', departments_path, class: 'btn btn-primary'
