@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Новый ребенок
+
+.form-horizontal
+  = form_for @child, controller: :children do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', children_path, class: 'btn btn-primary'

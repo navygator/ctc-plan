@@ -1,0 +1,25 @@
+= f.fidden_field :child, true
+.form-group
+  = f.label :last_name, "Фамилия", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :last_name, class: "form-control"
+.form-group
+  = f.label :first_name, "Имя", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :first_name, class: "form-control"
+.form-group
+  = f.label :middle_name, "Отчество", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :middle_name, class: "form-control"
+.form-group
+  = f.label :birthday, "Дата рождения:", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :birthday, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
+.form-group
+  = f.label :address, "Адрес", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :address, class: "form-control"
+.form-group
+  = f.label :phone, "Телефон", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :phone, class: "form-control"

@@ -13,7 +13,7 @@
         %tr
           %td= syear.name
           %td.actions
-            = link_to edit_studying_year_path(syear), class: "btn btn-default btn-round" do
+            = link_to edit_studying_year_path(syear), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.icon-fa-edit
-            = link_to studying_year_path(syear), class: "btn btn-danger btn-round", method: :delete, data: { confirm: "Are you shure?" } do
+            = link_to studying_year_path(syear), class: "btn btn-danger btn-round", method: :delete, title: "Удалить", data: { confirm: "Are you shure?" } do
               %i.icon-fa-trash-o

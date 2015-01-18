@@ -17,7 +17,7 @@
           %td= dep.started_at
           %td= dep.closed_at
           %td.actions
-            = link_to edit_department_path(dep), class: "btn btn-default btn-round" do
+            = link_to edit_department_path(dep), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.icon-fa-edit
-            = link_to department_path(dep), class: "btn btn-danger btn-round", method: :delete, data: { confirm: "Are you shure?" } do
+            = link_to department_path(dep), class: "btn btn-danger btn-round", method: :delete, title: "Удалить", data: { confirm: "Are you shure?" } do
               %i.icon-fa-trash-o

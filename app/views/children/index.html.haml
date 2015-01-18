@@ -1,0 +1,25 @@
+- content_for :page_title do
+  Дети 
+
+%p= link_to 'Создать', new_child_path, class: 'btn btn-primary'
+- if @children.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th ФИО
+        %th Дата рождения
+        %th Адрес
+        %th Телефон
+        %th.actions
+    %tbody
+      - @children.each do |child|
+        %tr
+          %td= child.full_name
+          %td= child.birthday
+          %td= child.address
+          %td= child.phone
+          %td.actions
+            = link_to edit_child_path(child), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.icon-fa-edit
+            = link_to children_path(child), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.icon-fa-trash-o

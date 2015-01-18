@@ -19,7 +19,7 @@
           %td= group.subject.name
           %td= group.timeofday
           %td.actions
-            = link_to edit_group_path(group), class: "btn btn-default btn-round" do
+            = link_to edit_group_path(group), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.icon-fa-edit
-            = link_to group_path(group), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
+            = link_to group_path(group), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
               %i.icon-fa-trash-o
