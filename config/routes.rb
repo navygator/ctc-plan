@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :people
+
+  resources :groups
+
   resources :studying_years
 
   resources :sections

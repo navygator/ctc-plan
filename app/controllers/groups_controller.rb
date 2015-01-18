@@ -1,0 +1,2 @@
+class GroupsController < BaseController
+end

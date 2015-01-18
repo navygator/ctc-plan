@@ -1,0 +1,25 @@
+- content_for :page_title do
+  Группы 
+
+%p= link_to 'Создать', new_group_path, class: 'btn btn-primary'
+- if @groups.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th Кружок
+        %th Предмет
+        %th Время дня
+        %th.actions
+    %tbody
+      - @groups.each do |group|
+        %tr
+          %td= group.name
+          %td= group.section.name
+          %td= group.subject.name
+          %td= group.timeofday
+          %td.actions
+            = link_to edit_group_path(group), class: "btn btn-default btn-round" do
+              %i.icon-fa-edit
+            = link_to group_path(group), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
+              %i.icon-fa-trash-o

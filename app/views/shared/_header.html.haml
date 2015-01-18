@@ -15,11 +15,15 @@
           %form{ action: "#", class: "searchform", method: "get", role: "search", autocomplete: "off" }
             %input{ type: "text", placeholder: "Search the site...", id: "search_text", name: "search[text]", value: "" }
       %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to "Обучающиеся", '#'
         %li.drop
           = link_to "Справочники", '#'
           %ul.dropdown
             %li= link_to 'Года обучения', studying_years_path
+            %li= link_to 'Группы', groups_path
             %li= link_to 'Кружки', sections_path
+            %li= link_to 'Люди', people_path
             %li= link_to 'Отделы', departments_path
             %li= link_to 'Объединения', unions_path
             %li= link_to 'Предметы', subjects_path

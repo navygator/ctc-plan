@@ -1,0 +1,12 @@
+.form-group
+  = f.label :section_id, "Кружок", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :section_id, Section.all, :id, :name, {}, class: "form-control select2"
+.form-group
+  = f.label :subject_id, "Предмет", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :subject_id, Subject.all, :id, :name, {}, class: "form-control select2"
+.form-group
+  = f.label :timeofday, "Время дня", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.select :timeofday, options_for_select([["Утро", "morning"], ["Вечер", "evening"]]), {}, { class: "form-control select2" }

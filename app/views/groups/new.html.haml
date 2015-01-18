@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Новая группа
+
+.form-horizontal
+  = form_for @group do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', groups_path, class: 'btn btn-primary'
