@@ -1,6 +1,15 @@
-production:
+default: &default
   adapter: mysql2
-  database: ctc_prod
   user: root
   pool: 5
   timeout: 5000  
+
+development:
+  <<: *default
+  database: ctc_dev
+
+production:
+  <<: *default
+  database: ctc_prod
+
+  

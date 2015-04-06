@@ -19,7 +19,7 @@ solr
 db/*.sqlite3
 /log/*
 /tmp/*
-
+/.c9/*
 # various artifacts
 **.war
 *.rbc

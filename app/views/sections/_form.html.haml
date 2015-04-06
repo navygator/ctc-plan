@@ -9,7 +9,7 @@
 .form-group
   = f.label :started_at, "Открыт:", class: "control-label col-md-2" 
   .col-md-4 
-    = f.text_field :started_at, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }
+    = f.text_field :started_at, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy", "date-language" => 'ru-RU' }
   = f.label :closed_at, "Закрыт:", class: "control-label col-md-2" 
   .col-md-4 
     = f.text_field :closed_at, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy" }

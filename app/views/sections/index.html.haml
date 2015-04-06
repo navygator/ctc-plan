@@ -16,8 +16,8 @@
         %tr
           %td= section.name
           %td= section.department.name
-          %td= section.started_at
-          %td= section.closed_at
+          %td= section.started_at.strftime('%d.%m.%Y')
+          %td= section.closed_at.try(:strftime, '%d.%m.%Y')
           %td.actions
             = link_to edit_section_path(section), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.icon-fa-edit

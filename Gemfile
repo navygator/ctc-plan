@@ -36,7 +36,8 @@ gem 'spring',        group: :development
 # gem 'font-awesome-rails'
 group :development do
   gem "letter_opener"
-  gem 'webrick'
+  gem 'thin'
+  # gem 'webrick'
   # gem 'debugger'
   gem 'xray-rails'
   gem 'bullet'

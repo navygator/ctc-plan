@@ -16,8 +16,8 @@
         %tr
           %td= union.name
           %td= union.department.name
-          %td= union.started_at
-          %td= union.closed_at
+          %td= union.started_at.strftime('%d.%m.%Y')
+          %td= union.closed_at.try(:strftime, '%d.%m.%Y')
           %td.actions
             = link_to edit_union_path(union), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.icon-fa-edit

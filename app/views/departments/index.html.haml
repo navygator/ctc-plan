@@ -14,8 +14,8 @@
       - @departments.each do |dep|
         %tr
           %td= dep.name
-          %td= dep.started_at
-          %td= dep.closed_at
+          %td= dep.started_at.strftime('%d.%m.%Y')
+          %td= dep.closed_at.try(:strftime, '%d.%m.%Y')
           %td.actions
             = link_to edit_department_path(dep), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.icon-fa-edit
