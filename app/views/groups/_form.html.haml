@@ -1,7 +1,7 @@
 .form-group
-  = f.label :section_id, "Кружок", class: "control-label col-md-2" 
+  = f.label :groupable_id, "Кружок/Объединение", class: "control-label col-md-2" 
   .col-md-4 
-    = f.collection_select :section_id, Section.all, :id, :name, {}, class: "form-control select2"
+    = f.collection_select :groupable_id, Union.active, :id, :name, {}, class: "form-control select2"
 .form-group
   = f.label :subject_id, "Предмет", class: "control-label col-md-2" 
   .col-md-4 

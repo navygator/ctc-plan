@@ -7,16 +7,18 @@
     %thead
       %tr
         %th Название
-        %th Кружок
+        %th Кружок/Объединение
         %th Предмет
+        %th Год обучения
         %th Время дня
         %th.actions
     %tbody
       - @groups.each do |group|
         %tr
           %td= group.name
-          %td= group.section.name
+          %td= group.groupable.name
           %td= group.subject.name
+          %td= ''
           %td= group.timeofday
           %td.actions
             = link_to edit_group_path(group), class: "btn btn-default btn-round", title: "Редактировать" do

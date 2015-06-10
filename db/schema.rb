@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118153712) do
+ActiveRecord::Schema.define(version: 20150610084838) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20150118153712) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
-    t.integer  "section_id"
     t.integer  "subject_id"
-    t.integer  "student_id"
     t.string   "timeofday"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "groupable_id"
+    t.string   "groupable_type"
   end
 
   create_table "people", force: true do |t|
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20150118153712) do
 
   create_table "subjects", force: true do |t|
     t.string   "name"
-    t.integer  "union_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
