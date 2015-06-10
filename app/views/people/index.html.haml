@@ -20,6 +20,6 @@
           %td= person.closed_at
           %td.actions
             = link_to edit_person_path(person), class: "btn btn-default btn-round" do
-              %i.icon-fa-edit
+              %i.fa.fa-edit
             = link_to people_path(person), method: :delete, class: "btn btn-danger btn-round", data: { confirm: "Are you shure?" } do
-              %i.icon-fa-trash-o
+              %i.fa.fa-trash-o

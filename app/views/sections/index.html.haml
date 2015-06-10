@@ -20,6 +20,6 @@
           %td= section.closed_at.try(:strftime, '%d.%m.%Y')
           %td.actions
             = link_to edit_section_path(section), class: "btn btn-default btn-round", title: "Редактировать" do
-              %i.icon-fa-edit
+              %i.fa.fa-edit
             = link_to section_path(section), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
-              %i.icon-fa-trash-o
+              %i.fa.fa-trash-o

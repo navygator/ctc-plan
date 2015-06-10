@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'select2-rails'
+gem "font-awesome-rails"
 
 # Deploy with Capistrano
 # gem 'capistrano'

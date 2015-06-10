@@ -18,6 +18,6 @@
           %td= subject.union.department.name
           %td.actions
             = link_to edit_subject_path(subject), class: "btn btn-default btn-round", title: "Редактировать" do
-              %i.icon-fa-edit
+              %i.fa.fa-edit
             = link_to subject_path(subject), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
-              %i.icon-fa-trash-o
+              %i.fa.fa-trash-o

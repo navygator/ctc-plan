@@ -20,6 +20,6 @@
           %td= union.closed_at.try(:strftime, '%d.%m.%Y')
           %td.actions
             = link_to edit_union_path(union), class: "btn btn-default btn-round", title: "Редактировать" do
-              %i.icon-fa-edit
+              %i.fa.fa-edit
             = link_to union_path(union), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
-              %i.icon-fa-trash-o
+              %i.fa.fa-trash-o

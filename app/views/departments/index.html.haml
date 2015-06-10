@@ -18,6 +18,6 @@
           %td= dep.closed_at.try(:strftime, '%d.%m.%Y')
           %td.actions
             = link_to edit_department_path(dep), class: "btn btn-default btn-round", title: "Редактировать" do
-              %i.icon-fa-edit
+              %i.fa.fa-edit
             = link_to department_path(dep), class: "btn btn-danger btn-round", method: :delete, title: "Удалить", data: { confirm: "Are you shure?" } do
-              %i.icon-fa-trash-o
+              %i.fa.fa-trash-o
