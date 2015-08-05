@@ -26,6 +26,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'select2-rails'
 gem "font-awesome-rails"
 
+gem 'globalid', github: 'rails/globalid', tag: 'v0.3.6'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 # gem 'rvm-capistrano'

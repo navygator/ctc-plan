@@ -7,15 +7,11 @@
     %thead
       %tr
         %th Название
-        %th Объединение
-        %th Отдел
         %th.actions
     %tbody
       - @subjects.each do |subject|
         %tr
           %td= subject.name
-          %td= subject.union.name
-          %td= subject.union.department.name
           %td.actions
             = link_to edit_subject_path(subject), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.fa.fa-edit

@@ -1,5 +1,8 @@
 ru:
   activerecord:
+    models:
+      union: Объединение
+      section: Кружок
     attributes:
       department:
         name: Название
@@ -28,4 +31,6 @@ ru:
   parents: Родители
   child: Ребенок
   children: Дети
+  teacher: Преподаватель
+  teachers: Преподаватели
 

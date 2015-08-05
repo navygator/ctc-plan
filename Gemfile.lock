@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rails/globalid.git
+  revision: c28a8940317b87b079a07f185e9626c7c8ed3e27
+  tag: v0.3.6
+  specs:
+    globalid (0.3.6)
+      activesupport (>= 4.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,6 +227,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   font-awesome-rails
+  globalid!
   haml
   jbuilder (~> 2.0)
   jquery-rails
