@@ -47,6 +47,6 @@ class GroupsController < BaseController
 
   private
   def group_params
-    params.require(:group).permit(:name, :groupable_id, :subject_id, :timeofday)
+    params.require(:group).permit(:name, :groupable_id, :subject_id, :time_of_day_id)
   end
 end

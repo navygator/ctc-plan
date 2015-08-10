@@ -19,7 +19,7 @@
           %td= group.groupable.name
           %td= group.subject.name
           %td= ''
-          %td= group.timeofday
+          %td= group.time_of_day.try(:name)
           %td.actions
             = link_to edit_group_path(group), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.fa.fa-edit

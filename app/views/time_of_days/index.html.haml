@@ -1,0 +1,19 @@
+- content_for :page_title do
+  Время дня 
+
+%p= link_to 'Создать', new_time_of_day_path, class: 'btn btn-primary'
+- if @time_of_days.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Называние
+        %th.actions
+    %tbody
+      - @time_of_days.each do |time_of_day|
+        %tr
+          %td= time_of_day.name
+          %td.actions
+            = link_to edit_time_of_day_path(time_of_day), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to time_of_day_path(time_of_day), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o

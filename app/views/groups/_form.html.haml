@@ -14,4 +14,4 @@
 .form-group
   = f.label :timeofday, "Время дня", class: "control-label col-md-2" 
   .col-md-4 
-    = f.select :timeofday, options_for_select([["Утро", "morning"], ["Вечер", "evening"]]), {}, { class: "form-control select2" }
+    = f.collection_select :time_of_day_id, TimeOfDay.all, :id, :name, {}, class: "form-control select2"

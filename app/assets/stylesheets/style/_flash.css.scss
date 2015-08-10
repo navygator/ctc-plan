@@ -1,5 +1,5 @@
-.alert {
-  .notice {
-    @extend .alert.info
-  }
+.alert.alert-notice {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
 }
