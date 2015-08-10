@@ -30,7 +30,7 @@ class GroupsController < BaseController
     # a bare id) or if the record is not found, in which case we
     # fall back to the regular update procedure below.
     if GlobalID::Locator.locate group_params[:groupable_id]
-      @group.client = GlobalID::Locator.locate params_for_update[:groupable_id]
+      @group.groupable = GlobalID::Locator.locate params_for_update[:groupable_id]
       params_for_update.delete :groupable_id
     end
   
@@ -47,6 +47,6 @@ class GroupsController < BaseController
 
   private
   def group_params
-    params.require(:group).permit(:groupable_id, :subject_id, :timeofday)
+    params.require(:group).permit(:name, :groupable_id, :subject_id, :timeofday)
   end
 end

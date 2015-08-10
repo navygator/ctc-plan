@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Редактировать статус
+
+.form-horizontal
+  = form_for @social_status do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', social_statuses_path, class: 'btn btn-primary'

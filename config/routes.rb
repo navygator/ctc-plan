@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :social_statuses
+
   resources :teachers
 
   resources :parents

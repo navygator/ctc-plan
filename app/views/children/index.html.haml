@@ -15,7 +15,7 @@
       - @children.each do |child|
         %tr
           %td= child.full_name
-          %td= child.birthday
+          %td= child.birthday.strftime('%d.%m.%Y')
           %td= child.address
           %td= child.phone
           %td.actions

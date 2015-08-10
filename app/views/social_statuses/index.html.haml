@@ -1,0 +1,19 @@
+- content_for :page_title do
+  Социальные статусы 
+
+%p= link_to 'Создать', new_social_status_path, class: 'btn btn-primary'
+- if @social_statuses.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th.actions
+    %tbody
+      - @social_statuses.each do |social_status|
+        %tr
+          %td= social_status.name
+          %td.actions
+            = link_to edit_social_status_path(social_status), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to social_status_path(social_status), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o
