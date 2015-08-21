@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811073541) do
+ActiveRecord::Schema.define(version: 20150821083135) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -40,7 +40,9 @@ ActiveRecord::Schema.define(version: 20150811073541) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "child",       default: false
+    t.boolean  "child",            default: false
+    t.integer  "person_status_id"
+    t.integer  "family_status_id"
   end
 
   create_table "relations", force: true do |t|
@@ -60,6 +62,13 @@ ActiveRecord::Schema.define(version: 20150811073541) do
   end
 
   create_table "social_statuses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "status_type_id"
+  end
+
+  create_table "status_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

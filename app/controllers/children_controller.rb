@@ -4,6 +4,10 @@ class ChildrenController < BaseController
   end
 private
   def child_params
-    params.require(:child).permit(:first_name, :last_name, :middle_name, :birthday, :address, :phone, :child)
+    params.require(:child).permit([
+      :first_name, :last_name, :middle_name, 
+      :birthday, :address, :phone, :child,
+      :family_status_id, :person_status_id
+      ])
   end
 end

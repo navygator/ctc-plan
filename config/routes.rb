@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :status_types
+
   resources :time_of_days
 
   resources :social_statuses

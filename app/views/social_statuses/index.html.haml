@@ -6,11 +6,13 @@
   %table.table.table-striped
     %thead
       %tr
+        %th Тип статуса
         %th Название
         %th.actions
     %tbody
       - @social_statuses.each do |social_status|
         %tr
+          %td= social_status.status_type.try(:name)
           %td= social_status.name
           %td.actions
             = link_to edit_social_status_path(social_status), class: "btn btn-default btn-round", title: "Редактировать" do

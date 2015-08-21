@@ -1,25 +1,41 @@
 = hidden_field_tag 'child[child]', true
-.form-group
-  = f.label :last_name, "Фамилия", class: "control-label col-md-2" 
-  .col-md-4 
-    = f.text_field :last_name, class: "form-control"
-.form-group
-  = f.label :first_name, "Имя", class: "control-label col-md-2" 
-  .col-md-4 
-    = f.text_field :first_name, class: "form-control"
-.form-group
-  = f.label :middle_name, "Отчество", class: "control-label col-md-2" 
-  .col-md-4 
-    = f.text_field :middle_name, class: "form-control"
-.form-group
-  = f.label :birthday, "Дата рождения:", class: "control-label col-md-2" 
-  .col-md-4 
-    = f.text_field :birthday, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy", "date-language" => 'ru-RU', value: @child.birthday.strftime('%d.%m.%Y') }
-.form-group
-  = f.label :address, "Адрес", class: "control-label col-md-2" 
-  .col-md-4 
-    = f.text_field :address, class: "form-control"
-.form-group
-  = f.label :phone, "Телефон", class: "control-label col-md-2" 
-  .col-md-4 
-    = f.text_field :phone, class: "form-control"
+.row
+  .col-md-6
+    %fieldset
+      %legend Персональные данные
+      .form-group
+        = f.label :last_name, "Фамилия", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :last_name, class: "form-control"
+      .form-group
+        = f.label :first_name, "Имя", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :first_name, class: "form-control"
+      .form-group
+        = f.label :middle_name, "Отчество", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :middle_name, class: "form-control"
+      .form-group
+        = f.label :birthday, "Дата рождения:", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :birthday, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy", "date-language" => 'ru-RU', value: @child.birthday.strftime('%d.%m.%Y') }
+      .form-group
+        = f.label :address, "Адрес", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :address, class: "form-control"
+      .form-group
+        = f.label :phone, "Телефон", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :phone, class: "form-control"
+    
+  .col-md-6
+    %fieldset
+      %legend Социальные данные
+      .form-group
+        = f.label :person_status_id, "Социальный статус", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.collection_select :person_status_id, SocialStatus.personal, :id, :name, {}, class: "form-control select2"
+      .form-group
+        = f.label :family_status_id, "Cтатус семьи", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.collection_select :family_status_id, SocialStatus.family, :id, :name, {}, class: "form-control select2"
