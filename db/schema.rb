@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810143500) do
+ActiveRecord::Schema.define(version: 20150811073541) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20150810143500) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "child",       default: false
+  end
+
+  create_table "relations", force: true do |t|
+    t.integer  "parent_id"
+    t.integer  "child_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sections", force: true do |t|
