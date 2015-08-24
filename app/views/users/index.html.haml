@@ -1,0 +1,21 @@
+- content_for :page_title do
+  Пользователи 
+
+%p= link_to 'Создать', new_user_path, class: 'btn btn-primary'
+- if @users.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Логин
+        %th Email
+        %th.actions
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.email
+          %td.actions
+            = link_to edit_user_path(user), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to user_path(user), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o

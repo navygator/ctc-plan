@@ -1,0 +1,18 @@
+.form-group
+  = f.label :name, "Логин", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :name, class: "form-control"
+.form-group
+  = f.label :email, "Email", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.email_field :email, class: "form-control"
+
+- if params[:action] == 'new'
+  .form-group
+    = f.label :password, "Пароль", class: "control-label col-md-2" 
+    .col-md-4 
+      = f.password_field :password, class: "form-control"
+  .form-group
+    = f.label :password_confirmation, "Подтверждение", class: "control-label col-md-2" 
+    .col-md-4 
+      = f.password_field :password_confirmation, class: "form-control"

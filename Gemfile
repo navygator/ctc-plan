@@ -27,6 +27,7 @@ gem 'select2-rails'
 gem "font-awesome-rails"
 
 gem 'globalid', github: 'rails/globalid', tag: 'v0.3.6'
+gem 'devise'
 
 # Deploy with Capistrano
 # gem 'capistrano'

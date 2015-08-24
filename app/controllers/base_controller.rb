@@ -1,4 +1,5 @@
 class BaseController < ApplicationController
+  before_action :authenticate_user!
   before_filter :find_model, except: [:index]
   before_filter :find_collection, only: [:index]
 
