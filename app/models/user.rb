@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
     self.role ||= :user
   end
   
-  devise :database_authenticatable, :rememberable, :trackable
+  devise :database_authenticatable, :rememberable, :trackable, :authentication_keys => [:name]
 end

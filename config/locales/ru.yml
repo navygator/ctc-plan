@@ -3,9 +3,12 @@ ru:
     models:
       union: Объединение
       section: Кружок
+      user: Пользователь
     attributes:
       department:
         name: Название
+      user:
+        name: Имя пользователя
   department: Отдел
   departments: Отделы
   edit: Редактировать
