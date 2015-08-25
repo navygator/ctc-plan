@@ -1,0 +1,15 @@
+%table.table#available
+  %thead
+    %tr
+      %th ФИО
+      %th Birthday
+      %th Address
+  %tbody
+    - @available.each do |child|
+      %tr
+        %td= child.full_name
+        %td= child.birthday
+        %td= child.address
+        
+:coffee
+  $('#available').DataTable()

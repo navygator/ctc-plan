@@ -3,7 +3,22 @@
 
 .form-horizontal
   = form_for @group do |f|
-    = render partial: 'form', locals: { f: f }
+    .row
+      = render partial: 'form', locals: { f: f }
+    .row
+      %hr
+      .col-md-5
+        = render 'group_children'
+      .col-md-2
+        .btn-group-vertical
+          = link_to '#', class: 'btn btn-primary' do
+            %i.fa.fa-arrow-left
+            Добавить
+          = link_to '#', class: 'btn btn-primary' do
+            Удалить
+            %i.fa.fa-arrow-right
+      .col-md-5
+        = render 'available_children'
     = f.submit "Сохранить", class: 'btn btn-primary pull-right'
 .back-to-list
   = link_to 'Назад', groups_path, class: 'btn btn-primary'

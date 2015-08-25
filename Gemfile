@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'select2-rails'
 gem "font-awesome-rails"
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 gem 'globalid', github: 'rails/globalid', tag: 'v0.3.6'
 gem 'devise'

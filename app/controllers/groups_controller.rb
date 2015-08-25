@@ -1,5 +1,11 @@
 class GroupsController < BaseController
   
+  def edit
+    super
+    children_ids = @group.children.pluck(:id)
+    @available = Child.where('id not in (?)', children_ids.size > 0 ? children_ids : [-1])
+  end
+  
   def create
     @group = Group.new(group_params)
   
