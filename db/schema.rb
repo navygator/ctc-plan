@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825094802) do
+ActiveRecord::Schema.define(version: 20150825104615) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20150825094802) do
     t.string   "groupable_type"
     t.integer  "time_of_day_id"
   end
+
+  create_table "groups_people", id: false, force: true do |t|
+    t.integer  "group_id"
+    t.integer  "child_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groups_people", ["child_id"], name: "index_groups_people_on_child_id", using: :btree
+  add_index "groups_people", ["group_id"], name: "index_groups_people_on_group_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "first_name"
