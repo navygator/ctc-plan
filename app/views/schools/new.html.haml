@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Новое учебное заведение
+
+.form-horizontal
+  = form_for @school do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', schools_path, class: 'btn btn-primary'

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825104615) do
+ActiveRecord::Schema.define(version: 20150826133819) do
+
+  create_table "age_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -53,11 +59,21 @@ ActiveRecord::Schema.define(version: 20150825104615) do
     t.boolean  "child",            default: false
     t.integer  "person_status_id"
     t.integer  "family_status_id"
+    t.integer  "gender"
+    t.datetime "start_at"
+    t.integer  "school_id"
+    t.integer  "age_category_id"
   end
 
   create_table "relations", force: true do |t|
     t.integer  "parent_id"
     t.integer  "child_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

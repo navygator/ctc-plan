@@ -21,5 +21,5 @@
           %td.actions
             = link_to edit_child_path(child), class: "btn btn-default btn-round", title: "Редактировать" do
               %i.fa.fa-edit
-            = link_to children_path(child), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+            = link_to child_path(child), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
               %i.fa.fa-trash-o

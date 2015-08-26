@@ -7,7 +7,8 @@ private
     params.require(:child).permit([
       :first_name, :last_name, :middle_name, 
       :birthday, :address, :phone, :child,
-      :family_status_id, :person_status_id
+      :family_status_id, :person_status_id,
+      :gender, :start_at, :school_id, :age_category_id
       ])
   end
 end

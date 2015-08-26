@@ -20,6 +20,10 @@
         .col-md-8 
           = f.text_field :birthday, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy", "date-language" => 'ru-RU', value: (@child.birthday ? @child.birthday : Time.zone.now).strftime('%d.%m.%Y') }
       .form-group
+        = f.label :gender, "Пол", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.select :gender, options_for_select([['Мужской',1],['Женский',0]], @child.gender), {}, class: "form-control"
+      .form-group
         = f.label :address, "Адрес", class: "control-label col-md-4" 
         .col-md-8 
           = f.text_field :address, class: "form-control"
@@ -27,6 +31,10 @@
         = f.label :phone, "Телефон", class: "control-label col-md-4" 
         .col-md-8 
           = f.text_field :phone, class: "form-control"
+      .form-group
+        = f.label :start_at, "Дата приема", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.text_field :start_at, class: "date-field form-control", data: { provide: "datepicker", "date-format" => "dd.mm.yyyy", "date-language" => 'ru-RU', value: (@child.start_at ? @child.start_at : Time.zone.now).strftime('%d.%m.%Y') }
     
   .col-md-6
     %fieldset
@@ -39,3 +47,12 @@
         = f.label :family_status_id, "Cтатус семьи", class: "control-label col-md-4" 
         .col-md-8 
           = f.collection_select :family_status_id, SocialStatus.family, :id, :name, {}, class: "form-control select2"
+
+      .form-group
+        = f.label :school_id, "Учебное заведение", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.collection_select :school_id, School.all, :id, :name, {}, class: "form-control select2"
+      .form-group
+        = f.label :age_category_id, "Класс, курс", class: "control-label col-md-4" 
+        .col-md-8 
+          = f.collection_select :age_category_id, AgeCategory.all, :id, :name, {}, class: "form-control select2"

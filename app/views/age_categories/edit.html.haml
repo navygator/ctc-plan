@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Редактировать категорию
+
+.form-horizontal
+  = form_for @age_category do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', age_categories_path, class: 'btn btn-primary'

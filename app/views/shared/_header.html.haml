@@ -34,7 +34,12 @@
               %li= link_to 'Предметы', subjects_path
               %li= link_to 'Преподаватели', teachers_path
               %li= link_to 'Родители', parents_path
-              %li= link_to 'Статусы', social_statuses_path
+              %li.sup-drop 
+                %a{ href: '#' } Социальные
+                %ul.sup-dropdown
+                  %li= link_to 'Возрастные категории', age_categories_path
+                  %li= link_to 'Статусы', social_statuses_path
+                  %li= link_to 'Учебные заведения', schools_path
           - if current_user.role == 'admin'
             %li
               = link_to "Пользователи", users_path

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :age_categories
+
+  resources :schools
+
   devise_for :users
   resources :users
   resources :status_types

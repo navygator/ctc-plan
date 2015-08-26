@@ -1,0 +1,19 @@
+- content_for :page_title do
+  Учебные заведения
+
+%p= link_to 'Создать', new_school_path, class: 'btn btn-primary'
+- if @schools.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th.actions
+    %tbody
+      - @schools.each do |school|
+        %tr
+          %td= school.name
+          %td.actions
+            = link_to edit_school_path(school), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to school_path(school), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o
