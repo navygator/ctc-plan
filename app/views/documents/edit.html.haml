@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Редактировать документ
+
+.form-horizontal
+  = form_for [@child, @document], html: { multipart: true } do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', child_documents_path, class: 'btn btn-primary'

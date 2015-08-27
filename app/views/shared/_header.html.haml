@@ -40,6 +40,7 @@
                   %li= link_to 'Возрастные категории', age_categories_path
                   %li= link_to 'Статусы', social_statuses_path
                   %li= link_to 'Учебные заведения', schools_path
+              %li= link_to 'Типы документов', document_types_path
           - if current_user.role == 'admin'
             %li
               = link_to "Пользователи", users_path

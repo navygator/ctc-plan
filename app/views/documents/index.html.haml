@@ -1,0 +1,14 @@
+- content_for :page_title do
+  Документы
+
+%p= link_to 'Создать', new_child_document_path, class: 'btn btn-primary'
+- if @documents.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+        %th Тип
+        %th.actions
+    %tbody
+      - @documents.each do |document|
+        = render partial: 'document', locals: { document: document }

@@ -1,0 +1,10 @@
+%tr
+  %td= image_tag(document.scan.url(:thumb))
+  %td= document.document_type.name
+  %td.actions
+    = link_to edit_child_document_path(@child, document), class: "btn btn-default btn-round", title: "Редактировать" do
+      %i.fa.fa-edit
+    = link_to '#', class: "btn btn-default btn-round", title: "Открыть" do
+      %i.fa.fa-file-o
+    = link_to child_document_path(@child, document), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+      %i.fa.fa-trash-o

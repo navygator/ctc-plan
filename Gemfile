@@ -29,6 +29,7 @@ gem 'jquery-datatables-rails', '~> 3.3.0'
 
 gem 'globalid', github: 'rails/globalid', tag: 'v0.3.6'
 gem 'devise'
+gem "paperclip", "~> 4.3"
 
 # Deploy with Capistrano
 # gem 'capistrano'

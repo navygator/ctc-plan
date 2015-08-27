@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826133819) do
+ActiveRecord::Schema.define(version: 20150827133654) do
 
   create_table "age_categories", force: true do |t|
     t.string   "name"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(version: 20150826133819) do
     t.datetime "closed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "document_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents", force: true do |t|
+    t.integer  "document_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "scan_file_name"
+    t.string   "scan_content_type"
+    t.integer  "scan_file_size"
+    t.datetime "scan_updated_at"
   end
 
   create_table "groups", force: true do |t|

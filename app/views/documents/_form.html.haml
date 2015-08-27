@@ -1,0 +1,8 @@
+.form-group
+  = f.label :document_type_id, "Тип", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :document_type_id, DocumentType.all, :id, :name, {}, class: "form-control"
+.form-group
+  = f.label :scan, "Скан", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.file_field :scan

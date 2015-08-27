@@ -1,0 +1,19 @@
+- content_for :page_title do
+  Типы документов
+
+%p= link_to 'Создать', new_document_type_path, class: 'btn btn-primary'
+- if @document_types.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th.actions
+    %tbody
+      - @document_types.each do |document_type|
+        %tr
+          %td= document_type.name
+          %td.actions
+            = link_to edit_document_type_path(document_type), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to document_type_path(document_type), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o

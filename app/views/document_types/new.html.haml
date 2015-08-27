@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Новый тип документа
+
+.form-horizontal
+  = form_for @document_type do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', document_types_path, class: 'btn btn-primary'
