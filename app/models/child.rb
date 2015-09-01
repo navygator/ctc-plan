@@ -3,6 +3,8 @@ class Child < Person
 
   has_many :relations
   has_many :parents, through: :relations
+  has_many :documents
+  has_many :achievements, as: :achievable
 
   belongs_to :family_status, class_name: 'SocialStatus'
   belongs_to :person_status, class_name: 'SocialStatus'

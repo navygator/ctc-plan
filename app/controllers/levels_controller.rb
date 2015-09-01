@@ -1,0 +1,2 @@
+class LevelsController < BaseController
+end

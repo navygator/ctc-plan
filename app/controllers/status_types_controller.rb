@@ -1,2 +1,2 @@
-class StatusTypesController < ApplicationController
+class StatusTypesController < BaseController
 end

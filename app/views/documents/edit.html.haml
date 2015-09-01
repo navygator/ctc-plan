@@ -6,4 +6,4 @@
     = render partial: 'form', locals: { f: f }
     = f.submit "Сохранить", class: 'btn btn-primary pull-right'
 .back-to-list
-  = link_to 'Назад', child_documents_path, class: 'btn btn-primary'
+  = link_to 'Назад', edit_child_path(@child), class: 'btn btn-primary'

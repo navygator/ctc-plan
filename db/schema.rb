@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827133654) do
+ActiveRecord::Schema.define(version: 20150901092456) do
+
+  create_table "achievement_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "visible_params"
+  end
+
+  create_table "achievements", force: true do |t|
+    t.string   "achievable_type"
+    t.integer  "achievable_id"
+    t.integer  "achievement_type_id"
+    t.text     "description"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "level_id"
+    t.integer  "grade_id"
+  end
 
   create_table "age_categories", force: true do |t|
     t.string   "name"
@@ -41,6 +60,14 @@ ActiveRecord::Schema.define(version: 20150827133654) do
     t.string   "scan_content_type"
     t.integer  "scan_file_size"
     t.datetime "scan_updated_at"
+    t.integer  "child_id"
+  end
+
+  create_table "grades", force: true do |t|
+    t.integer  "achievement_type_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "groups", force: true do |t|
@@ -62,6 +89,12 @@ ActiveRecord::Schema.define(version: 20150827133654) do
 
   add_index "groups_people", ["child_id"], name: "index_groups_people_on_child_id", using: :btree
   add_index "groups_people", ["group_id"], name: "index_groups_people_on_group_id", using: :btree
+
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", force: true do |t|
     t.string   "first_name"

@@ -1,0 +1,15 @@
+- content_for :page_title do
+  Достижения
+
+%p= link_to 'Создать', new_child_achievement_path, class: 'btn btn-primary'
+- if @achievements.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Тип
+        %th Описание
+        %th Дата
+        %th.actions
+    %tbody
+      - @achievements.each do |achievement|
+        = render partial: 'achievement', locals: { achievement: achievement }

@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  resources :levels
 
+  resources :grades
+
+  resources :achievement_types
 
   devise_for :users
   resources :users
 
   resources :children do
     resources :documents
+    resources :achievements
   end
   
   resources :parents
@@ -17,11 +22,18 @@ Rails.application.routes.draw do
   resources :time_of_days
   resources :social_statuses
   resources :teachers
-  resources :groups
+  
+  resources :groups do
+    resources :achievements
+  end
   resources :studying_years
-  resources :sections
+  
+  resources :sections do
+    resources :achievements
+  end
   resources :subjects
-  resources :departments
+  resources :departments do
+  end
   resources :unions
 
   root 'home#index'

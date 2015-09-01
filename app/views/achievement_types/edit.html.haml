@@ -1,9 +1,9 @@
 - content_for :page_title do
-  Новый документ
+  Редактировать тип
 
 .form-horizontal
-  = form_for [@child, @document], html: { multipart: true } do |f|
+  = form_for @achievement_type do |f|
     = render partial: 'form', locals: { f: f }
     = f.submit "Сохранить", class: 'btn btn-primary pull-right'
 .back-to-list
-  = link_to 'Назад', edit_child_path(@child), class: 'btn btn-primary'
+  = link_to 'Назад', achievement_types_path, class: 'btn btn-primary'

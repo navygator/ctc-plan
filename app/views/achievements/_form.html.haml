@@ -1,0 +1,20 @@
+.form-group
+  = f.label :achievement_type_id, "Тип", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :achievement_type_id, AchievementType.all, :id, :name, {}, class: "form-control"
+.form-group.level{class: @achievement.visible_params.include?('level') ? '' :  'hidden' }
+  = f.label :level_id, "Уровень", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :level_id, Level.all, :id, :name, {}, class: "form-control"
+.form-group.grade{class: @achievement.visible_params.include?('grade') ? '' :  'hidden' }
+  = f.label :grade_id, "Грейд", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :grade_id, Grade.where(achievement_type_id: 1), :id, :name, {}, class: "form-control"
+.form-group
+  = f.label :description, "Описание", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_area :description, class: "form-control"
+.form-group
+  = f.label :date, "Дата", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :date, class: "form-control date-field",  data: { provide: "datepicker", "date-format" => "dd.mm.yyyy", "date-language" => 'ru-RU', value: (@achievement.date ? @achievement.date : Time.zone.now).strftime('%d.%m.%Y') }

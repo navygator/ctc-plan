@@ -56,3 +56,30 @@
         = f.label :age_category_id, "Класс, курс", class: "control-label col-md-4" 
         .col-md-8 
           = f.collection_select :age_category_id, AgeCategory.all, :id, :name, {}, class: "form-control select2"
+    %filedset
+      %legend Достижения
+      %p= link_to 'Добавить', new_child_achievement_path(@child), class: 'btn btn-primary'      
+      %table.table
+        %thead
+          %tr
+            %th Тип
+            %th Описание
+            %th Дата
+            %th.actions
+        - @child.achievements.each do |achievement|
+          = render achievement
+          
+.row
+  .col-md-6
+    %filedset
+      %legend Документы
+      %p= link_to 'Добавить', new_child_document_path(@child), class: 'btn btn-primary'      
+      %table.table
+        %thead
+          %tr
+            %th Тип
+            %th Скан
+            %th.actions
+        - @child.documents.each do |doc|
+          = render doc
+          

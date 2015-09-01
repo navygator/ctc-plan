@@ -1,0 +1,19 @@
+- content_for :page_title do
+  Типы достижений
+
+%p= link_to 'Создать', new_achievement_type_path, class: 'btn btn-primary'
+- if @achievement_types.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th.actions
+    %tbody
+      - @achievement_types.each do |achievement_type|
+        %tr
+          %td= achievement_type.name
+          %td.actions
+            = link_to edit_achievement_type_path(achievement_type), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to achievement_type_path(achievement_type), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o

@@ -1,0 +1,9 @@
+%tr
+  %td= achievement.achievement_type.name
+  %td= achievement.description
+  %td= achievement.date.strftime('%d.%m.%Y')
+  %td.actions
+    = link_to edit_child_achievement_path(@child, achievement), class: "btn btn-default btn-round", title: "Редактировать" do
+      %i.fa.fa-edit
+    = link_to child_achievement_path(@child, achievement), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+      %i.fa.fa-trash-o
