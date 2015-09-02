@@ -1,5 +1,7 @@
 %tr
   %td= achievement.achievement_type.name
+  %td= achievement.level.name if achievement.level.present?
+  %td= achievement.grade.name if achievement.grade.present?
   %td= achievement.description
   %td= achievement.date.strftime('%d.%m.%Y')
   %td.actions

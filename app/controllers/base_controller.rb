@@ -2,11 +2,14 @@ class BaseController < ApplicationController
   before_action :authenticate_user!
   before_filter :find_model, except: [:index]
   before_filter :find_collection, only: [:index]
-
+  
+  respond_to :html
+  
   add_breadcrumb "Домой", :root_path
 
   def index
     add_breadcrumb t(controller_name), send("#{controller_name}_path"), :title => t(controller_name)
+    respond_with @collection
   end
 
   def new
@@ -24,7 +27,7 @@ class BaseController < ApplicationController
   end
 
   def show
-    
+    respond_with @resource
   end
 
   def edit

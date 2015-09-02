@@ -39,6 +39,6 @@ class AchievementsController < BaseController
   end
   
   def achievement_params
-    params.require(:achievement).permit(:achievement_type_id, :child_id, :description, :date)
+    params.require(:achievement).permit(:achievement_type_id, :child_id, :description, :date, :level_id, :grade_id)
   end
 end

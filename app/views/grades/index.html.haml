@@ -1,0 +1,20 @@
+- content_for :page_title do
+  Грейды достижений
+
+%p= link_to 'Создать', new_grade_path, class: 'btn btn-primary'
+- if @grades.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Название
+        %th.actions
+    %tbody
+      - @grades.each do |grade|
+        %tr
+          %td= grade.name
+          %td= grade.achievement_type.name
+          %td.actions
+            = link_to edit_grade_path(grade), class: "btn btn-default btn-round", title: "Редактировать" do
+              %i.fa.fa-edit
+            = link_to grade_path(grade), method: :delete, class: "btn btn-danger btn-round", title: "Удалить", data: { confirm: "Are you shure?" } do
+              %i.fa.fa-trash-o

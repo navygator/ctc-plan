@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :levels
 
-  resources :grades
+  resources :grades do
+    collection do
+      get :search
+    end
+  end
 
   resources :achievement_types
 

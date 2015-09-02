@@ -1,15 +1,15 @@
-.form-group
+.form-group{data: {url: achievement_types_path}}
   = f.label :achievement_type_id, "Тип", class: "control-label col-md-2" 
   .col-md-4 
-    = f.collection_select :achievement_type_id, AchievementType.all, :id, :name, {}, class: "form-control"
-.form-group.level{class: @achievement.visible_params.include?('level') ? '' :  'hidden' }
+    = f.collection_select :achievement_type_id, AchievementType.all, :id, :name, {}, class: "form-control select2"
+.form-group.variable.level{class: @achievement.visible_params.include?('level') || params[:action] == 'new' ? '' :  'hidden' }
   = f.label :level_id, "Уровень", class: "control-label col-md-2" 
   .col-md-4 
-    = f.collection_select :level_id, Level.all, :id, :name, {}, class: "form-control"
-.form-group.grade{class: @achievement.visible_params.include?('grade') ? '' :  'hidden' }
+    = f.collection_select :level_id, Level.all, :id, :name, {include_blank: true}, class: "form-control select2"
+.form-group.variable.grade{class: @achievement.visible_params.include?('grade') || params[:action] == 'new' ? '' :  'hidden' }
   = f.label :grade_id, "Грейд", class: "control-label col-md-2" 
   .col-md-4 
-    = f.collection_select :grade_id, Grade.where(achievement_type_id: 1), :id, :name, {}, class: "form-control"
+    = f.collection_select :grade_id, Grade.where(achievement_type_id: 1), :id, :name, {include_blank: true}, class: "form-control select2"
 .form-group
   = f.label :description, "Описание", class: "control-label col-md-2" 
   .col-md-4 

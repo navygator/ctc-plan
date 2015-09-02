@@ -1,0 +1,8 @@
+.form-group
+  = f.label :name, "Название", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.text_field :name, class: "form-control"
+.form-group
+  = f.label :achievement_type_id, "Тип достижения", class: "control-label col-md-2" 
+  .col-md-4 
+    = f.collection_select :achievement_type_id, AchievementType.all, :id, :name, {}, class: "form-control select2"

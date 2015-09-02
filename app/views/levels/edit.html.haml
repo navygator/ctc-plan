@@ -1,0 +1,9 @@
+- content_for :page_title do
+  Редактировать уровень
+
+.form-horizontal
+  = form_for @level do |f|
+    = render partial: 'form', locals: { f: f }
+    = f.submit "Сохранить", class: 'btn btn-primary pull-right'
+.back-to-list
+  = link_to 'Назад', levels_path, class: 'btn btn-primary'
